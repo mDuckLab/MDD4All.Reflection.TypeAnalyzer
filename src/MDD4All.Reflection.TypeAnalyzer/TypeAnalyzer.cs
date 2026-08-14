@@ -282,6 +282,7 @@ namespace MDD4All.Reflection
         /// <br/>- <see cref="DateTime"/>
         /// <br/>- <see cref="DateTimeOffset"/>
         /// <br/>- <see cref="TimeSpan"/>
+        /// <br/>- <see cref="Guid"/>
         /// <br/>- All <see cref="Type.IsEnum"/> types
         /// </summary>
         /// <param name="type">The <see cref="Type"/> to check.</param>
@@ -299,6 +300,7 @@ namespace MDD4All.Reflection
                 type == typeof(DateTime) ||
                 type == typeof(DateTimeOffset) ||
                 type == typeof(TimeSpan) ||
+                type == typeof(Guid) ||
                 type.IsEnum)
                 {
                     result = true;
