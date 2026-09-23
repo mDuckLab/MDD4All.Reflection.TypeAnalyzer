@@ -16,7 +16,7 @@
     <Authors>mDuckLab</Authors>
     <Company>MDD4All.de</Company>
     <Copyright>© 2026 mDuckLab</Copyright>
-    <Description>Answers what a .NET type is at runtime: a simple value, an object, a list, an array or a dictionary - together with the types it is built from. Written for editors and serializers that meet a type for the first time while running.</Description>
+    <Description>Tells you at runtime what a type is - a simple value, a nullable one, an array, a list, a dictionary, another generic type or a plain object - and which types it is built from. Written for editors and serializers that meet a type for the first time while running.</Description>
     <PackageTags>reflection type-analysis object-graph</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>Nuget.md</PackageReadmeFile>
