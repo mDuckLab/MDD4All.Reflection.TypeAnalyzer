@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,5 +8,39 @@
     <AssemblyName>$(MSBuildProjectName.Replace("-dev", ""))</AssemblyName>
     <RootNamespace>$(MSBuildProjectName.Replace("-dev", ""))</RootNamespace>
   </PropertyGroup>
+
+  <!-- What the listing on a package feed shows. The version is only a fallback: the
+       build hands in the real one, read from src/version.txt plus the run number. -->
+  <PropertyGroup>
+    <Version>2.0.0.0</Version>
+    <Authors>mDuckLab</Authors>
+    <Company>MDD4All.de</Company>
+    <Copyright>© 2026 mDuckLab</Copyright>
+    <Description>Answers what a .NET type is at runtime: a simple value, an object, a list, an array or a dictionary - together with the types it is built from. Written for editors and serializers that meet a type for the first time while running.</Description>
+    <PackageTags>reflection type-analysis object-graph</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>Nuget.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/mDuckLab/MDD4All.Reflection.TypeAnalyzer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- Lets a debugger step into this code from a project that only has the package. -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Nuget.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

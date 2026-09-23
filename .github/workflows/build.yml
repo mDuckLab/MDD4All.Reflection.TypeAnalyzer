@@ -1,10 +1,14 @@
-name: Nuget Package Build
+﻿name: Nuget Package Build
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   build:
@@ -20,7 +24,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
 
     - name: Read VERSION file
       id: fileVersion
@@ -48,4 +52,13 @@ jobs:
       with:
         name: ${{env.PROJECT_NAME}}.${{env.VERSION}}
         path: ./Output/*.nupkg
+
+    # Only from main, and main only moves for a release. A pull request builds and packs
+    # so the package can be inspected, but nothing leaves the run.
+    - name: Publish to GitHub Packages
+      if: github.ref == 'refs/heads/main'
+      run: dotnet nuget push ./Output/*.nupkg
+           --api-key ${{secrets.GITHUB_TOKEN}}
+           --source https://nuget.pkg.github.com/mDuckLab/index.json
+           --skip-duplicate
       
