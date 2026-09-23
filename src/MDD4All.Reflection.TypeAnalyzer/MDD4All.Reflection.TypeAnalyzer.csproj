@@ -20,11 +20,11 @@
     <PackageTags>reflection type-analysis object-graph</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>Nuget.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/mDuckLab/MDD4All.Reflection.TypeAnalyzer</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
-  <!-- Lets a debugger step into this code from a project that only has the package. -->
+  <!-- Where the package came from, and what a debugger needs to step into this code from
+       a project that only has the package. The repository address is not written out: it is
+       read from the git remote while packing, so moving the repository changes nothing here. -->
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
