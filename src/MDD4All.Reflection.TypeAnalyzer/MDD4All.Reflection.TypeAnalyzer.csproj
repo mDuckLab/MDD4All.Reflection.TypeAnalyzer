@@ -17,7 +17,7 @@
     <Company>MDD4All.de</Company>
     <Copyright>© 2026 mDuckLab</Copyright>
     <Description>Tells you at runtime what a type is - a simple value, a nullable one, an array, a list, a dictionary, another generic type or a plain object - and which types it is built from. Written for editors and serializers that meet a type for the first time while running.</Description>
-    <PackageTags>reflection type-analysis object-graph</PackageTags>
+    <PackageTags>Reflection TypeAnalyzer TypeAnalysis ObjectGraph Collections Serialization</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>Nuget.md</PackageReadmeFile>
   </PropertyGroup>
