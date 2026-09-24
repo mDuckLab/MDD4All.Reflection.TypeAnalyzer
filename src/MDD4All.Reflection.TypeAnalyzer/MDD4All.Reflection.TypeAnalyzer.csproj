@@ -5,8 +5,6 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>$(MSBuildProjectName.Replace("-dev", ""))</AssemblyName>
-    <RootNamespace>$(MSBuildProjectName.Replace("-dev", ""))</RootNamespace>
   </PropertyGroup>
 
   <!-- What the listing on a package feed shows. The version is only a fallback: the
